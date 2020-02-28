@@ -1,0 +1,38 @@
+
+Showing logs for build [32mjstrachan-environment-jstrachan-gg59j-2[0m stage [32mpr-checks[0m and container [32mstep-credential-initializer-rtq6h[0m
+{"level":"warn","ts":1582910303.4547305,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1582910303.4578438,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mjstrachan-environment-jstrachan-gg59j-2[0m stage [32mpr-checks[0m and container [32mstep-working-dir-initializer-fzzql[0m
+{"level":"warn","ts":1582910304.411375,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1582910304.4127004,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mjstrachan-environment-jstrachan-gg59j-2[0m stage [32mpr-checks[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mjstrachan-environment-jstrachan-gg59j-2[0m stage [32mpr-checks[0m and container [32mstep-git-source-jstrachan-environment-jstrachan-gg59j-6m2fg[0m
+{"level":"warn","ts":1582910310.5825832,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1582910311.6143653,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/*********/environment-*********-**5-dev.git @ master in path /workspace/source"}
+
+Showing logs for build [32mjstrachan-environment-jstrachan-gg59j-2[0m stage [32mpr-checks[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:ffaf629238f194db3000d0dbb5e34a7efc90aba5,1:85214671f056a2e56b361abf55d7d494367c0d2f
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git fetch origin --unshallow 85214671f056a2e56b361abf55d7d494367c0d2f: ffaf629238f194db3000d0dbb5e34a7efc90aba5:
+DEBUG: ran git fetch --unshallow origin 85214671f056a2e56b361abf55d7d494367c0d2f: ffaf629238f194db3000d0dbb5e34a7efc90aba5: in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git branch
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git checkout master
+DEBUG: ran git checkout master in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git reset --hard ffaf629238f194db3000d0dbb5e34a7efc90aba5
+DEBUG: ran git reset --hard ffaf629238f194db3000d0dbb5e34a7efc90aba5 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git clean -fd .
+DEBUG: ran clean --force -d . in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git merge 85214671f056a2e56b361abf55d7d494367c0d2f
+DEBUG: ran git merge 85214671f056a2e56b361abf55d7d494367c0d2f in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git log --format=%H%x1f%an%x1f%ae%x1f%cn%x1f%ce%x1f%s%n%b%x1e ffaf629238f194db3000d0dbb5e34a7efc90aba5..HEAD
+Merged SHA 85214671f056a2e56b361abf55d7d494367c0d2f with commit message 'chore(deps): bump https://github.com/*********/bdd-nh-1582910244.git' into base branch master
+Merged SHA 46ceba9c3042e43ee34629a6634e6632b5eeff44 with commit message 'chore(deps): bump https://github.com/*********/bdd-nh-1582910159.git' into base branch master
+
+Showing logs for build [32mjstrachan-environment-jstrachan-gg59j-2[0m stage [32mpr-checks[0m and container [32mstep-create-helmfile[0m
+
+Showing logs for build [32mjstrachan-environment-jstrachan-gg59j-2[0m stage [32mpr-checks[0m and container [32mstep-lint-helmfile-system[0m
+in ./helmfile.yaml: error during ../environments.yaml.part.0 parsing: template: stringTemplate:6:9: executing "stringTemplate" at <requiredEnv "JX_SECRETS_YAML">: error calling requiredEnv: required env var `JX_SECRETS_YAML` is not set
+[31m
+Pipeline failed on stage 'pr-checks' : container 'step-lint-helmfile-system'. The execution of the pipeline has stopped.[0m

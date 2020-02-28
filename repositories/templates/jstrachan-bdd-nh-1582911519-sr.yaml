@@ -1,0 +1,21 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: jstrachan
+    provider: github
+    repository: bdd-nh-1582911519
+  name: jstrachan-bdd-nh-1582911519
+spec:
+  description: Imported application for jstrachan/bdd-nh-1582911519
+  httpCloneURL: https://github.com/jstrachan/bdd-nh-1582911519.git
+  org: jstrachan
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: bdd-nh-1582911519
+  scheduler:
+    kind: ""
+    name: ""
+  url: https://github.com/jstrachan/bdd-nh-1582911519.git
